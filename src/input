@@ -1,0 +1,140 @@
+Input/Output
+1.	Creational commands:
+
+a.	Create user
+Input:
+CreateUser@Georgi Georgiev
+CreateUser@Georgi Georgiev
+CreateUser@Ivan
+exit
+
+Output:
+User with name Georgi Georgiev was created.
+This user Georgi Georgiev already exists in the system!
+User name must be between 5 and 15 characters long.
+----------------------------------------------------------------------------
+
+b.	Create task
+Input:
+CreateTask@Task Title 1@task description 1@2023-07-19
+CreateTask@Task Title 2@task description 2@2023-07-19
+CreateTask@Task Title 1@task description 1@2023-07-19
+CreateTask@Task Title 3@task d1@2023-07-18
+CreateTask@Task Title 4@task description3@2023-07-1
+exit
+
+Output:
+Task with id 1, title Task Title 1, description task description 1, dueDate 2023-07-19, status New was created.
+Task with id 2, title Task Title 2, description task description 2, dueDate 2023-07-19, status New was created.
+This title Task Title 1 already exists in the system!
+Description must be between 10 and 500 characters long.
+Invalid input
+----------------------------------------------------------------------------
+
+2.	Change commands:
+
+a.	ChangeTaskTitleCommand
+
+Input:
+CreateTask@Task Title 1@task description 1@2023-07-19
+ChangeTaskTitle@1@Edited task title
+ChangeTaskTitle@3@Edited task title
+exit
+
+Output:
+Task with id 1, title Task Title 1, description task description 1, dueDate 2023-07-19, status New was created.
+Title of task with id 1 changed to title: 'Edited task title'.
+No record with ID 3
+
+----------------------------------------------------------------------------
+b.	ChangeTaskDescriptionCommand
+Input:
+CreateTask@Task Title@task description@2023-07-19
+ChangeTaskDescription@1@task description
+ChangeTaskDescription@1@Edited task description
+ChangeTaskDescription@3@Edited task description
+exit
+
+
+Output:
+Task with id 1, title Task Title, description task description, dueDate 2023-07-19, status New was created.
+task description is already task description
+Description of task with id 1 changed to description: 'Edited task description'.
+No record with ID 3
+
+----------------------------------------------------------------------------
+
+c.	ChangeTaskDueDateCommand
+CreateTask@Task Title@task description@2023-07-19
+ChangeTaskDueDate@1@2023-07-19
+ChangeTaskDueDate@1@2023-08-01
+ChangeTaskDueDate@3@2023-07-21
+exit
+
+Output:
+Task with id 1, title Task Title, description task description, dueDate 2023-07-19, status New was created.
+2023-07-19 is already 2023-07-19
+Due date of task with id 1 changed to due date: '2023-08-01'.
+No record with ID 3
+----------------------------------------------------------------------------
+d.	ChangeTaskStatusCommand
+
+Input:
+CreateTask@Task Title@task description@2023-07-19
+ChangeTaskStatus@1@New
+ChangeTaskStatus@1@Pending
+ChangeTaskStatus@3@Compl
+exit
+
+Output:
+Task with id 1, title Task Title, description task description, dueDate 2023-07-19, status New was created.
+Task with title Task Title is already at status: New
+Status of task with id 1 changed to status: 'Pending'.
+Invalid input
+
+----------------------------------------------------------------------------
+2.	Remove commands:
+
+a.	RemoveTaskTitleCommand
+Intput:
+CreateTask@Task Title 1@task description 1@2023-07-19
+CreateTask@Task Title 2@task description 2@2023-07-25
+CreateTask@Task Title 3@task description 3@2023-07-31
+ListAllTasks
+RemoveTask@2
+ListAllTasks
+exit
+
+Output:
+Task with id 1, title Task Title 1, description task description 1, dueDate 2023-07-19, status New was created.
+Task with id 2, title Task Title 2, description task description 2, dueDate 2023-07-25, status New was created.
+Task with id 3, title Task Title 3, description task description 3, dueDate 2023-07-31, status New was created.
+1.Task {id=1, title='Task Title 1', description='task description 1', status=New, dueDate=2023-07-19}
+2.Task {id=2, title='Task Title 2', description='task description 2', status=New, dueDate=2023-07-25}
+3.Task {id=3, title='Task Title 3', description='task description 3', status=New, dueDate=2023-07-31}
+Task with title Task Title 2 was removed.
+1.Task {id=1, title='Task Title 1', description='task description 1', status=New, dueDate=2023-07-19}
+2.Task {id=3, title='Task Title 3', description='task description 3', status=New, dueDate=2023-07-31}
+----------------------------------------------------------------------------
+
+3.	ListAllTasksCommand
+Intput:
+CreateTask@Task Title 1@task description 1@2023-07-19
+CreateTask@Task Title 2@task description 2@2023-07-25
+CreateTask@Task Title 3@task description 3@2023-07-31
+CreateTask@Task Title 4@task description 4@2023-07-15
+CreateTask@Task Title 5@task description 5@2023-07-17
+ListAllTasks
+exit
+
+Output:
+Task with id 1, title Task Title 1, description task description 1, dueDate 2023-07-19, status New was created.
+Task with id 2, title Task Title 2, description task description 2, dueDate 2023-07-25, status New was created.
+Task with id 3, title Task Title 3, description task description 3, dueDate 2023-07-31, status New was created.
+Task with id 4, title Task Title 4, description task description 4, dueDate 2023-07-15, status New was created.
+Task with id 5, title Task Title 5, description task description 5, dueDate 2023-07-17, status New was created.
+1.Task {id=4, title='Task Title 4', description='task description 4', status=New, dueDate=2023-07-15}
+2.Task {id=5, title='Task Title 5', description='task description 5', status=New, dueDate=2023-07-17}
+3.Task {id=1, title='Task Title 1', description='task description 1', status=New, dueDate=2023-07-19}
+4.Task {id=2, title='Task Title 2', description='task description 2', status=New, dueDate=2023-07-25}
+5.Task {id=3, title='Task Title 3', description='task description 3', status=New, dueDate=2023-07-31}

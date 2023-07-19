@@ -11,7 +11,6 @@ import java.util.List;
 
 public class RemoveTaskCommand extends BaseCommand {
 
-    public static final String INVALID_INPUT_MESSAGE = "Invalid input. Expected a number.";
     public static final int EXPECTED_NUMBER_OF_ARGUMENTS = 1;
 
     public RemoveTaskCommand(TaskManagementSystemRepository taskManagementSystemRepository) {

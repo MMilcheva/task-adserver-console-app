@@ -30,8 +30,7 @@ public class CreateUserCommand extends BaseCommand {
 
     }
 
-
-    public void parseParameters(List<String> parameters) {
+   public void parseParameters(List<String> parameters) {
         this.name = parameters.get(0);
     }
 

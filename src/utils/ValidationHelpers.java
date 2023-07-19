@@ -14,13 +14,6 @@ public class ValidationHelpers {
             throw new InvalidUserInputException(String.format(STRING_LENGTH_ERROR, type, minLength, maxLength));
         }
     }
-
-    public static void validatePositiveNumber(int value, String errorMessage) {
-        if (value < 0) {
-            throw new InvalidUserInputException(errorMessage);
-        }
-    }
-
     public static void validateStringLength(String stringToValidate, int minLength, int maxLength, String type) {
         validateIntRange(minLength, maxLength, stringToValidate.length(), type);
     }

@@ -105,11 +105,17 @@ RemoveTask@2
 ListAllTasks
 exit
 
-CreateTask@Task Title 3@task description 3@2023-07-31
-RemoveTask@1
-exit
+Output:
+Task with id 1, title Task Title 1, description task description 1, dueDate 2023-07-19, status New was created.
+Task with id 2, title Task Title 2, description task description 2, dueDate 2023-07-25, status New was created.
+Task with id 3, title Task Title 3, description task description 3, dueDate 2023-07-31, status New was created.
+1.Task {id=1, title='Task Title 1', description='task description 1', status=New, dueDate=2023-07-19}
+2.Task {id=2, title='Task Title 2', description='task description 2', status=New, dueDate=2023-07-25}
+3.Task {id=3, title='Task Title 3', description='task description 3', status=New, dueDate=2023-07-31}
+Task with title Task Title 2 was removed.
+1.Task {id=1, title='Task Title 1', description='task description 1', status=New, dueDate=2023-07-19}
+2.Task {id=3, title='Task Title 3', description='task description 3', status=New, dueDate=2023-07-31}
 ----------------------------------------------------------------------------
-
 
 3.	ListAllTasksCommand
 Intput:

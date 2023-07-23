@@ -22,7 +22,7 @@ public class ListAllTasksCommand extends BaseCommand {
 
     private String listAllTasks() {
 
-        List<Task> allTasks = getTaskManagementSystemRepository().getAllTasks().stream().sorted(Comparator.comparing(Task::getDueDate)).collect(Collectors.toList());
+        List<Task> allTasks = getTaskManagementSystemRepository().getAllTasks().stream().sorted(Comparator.comparing(Task::getDueDate, Comparator.nullsLast(Comparator.naturalOrder()))).collect(Collectors.toList());
         if (allTasks.isEmpty()) {
             return ConstantHelpers.NO_REGISTERED_TASKS;
         }

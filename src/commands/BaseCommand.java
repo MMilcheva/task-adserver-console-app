@@ -14,15 +14,15 @@ public abstract class BaseCommand implements Command {
         BaseCommand.taskManagementSystemRepository = taskManagementSystemRepository;
     }
 
-    protected static TaskManagementSystemRepository getTaskManagementSystemRepository() {
+    public static TaskManagementSystemRepository getTaskManagementSystemRepository() {
         return taskManagementSystemRepository;
     }
 
-
-    public abstract String executeCommand(List<String> parameters);
 
     @Override
     public String execute(List<String> parameters) {
         return executeCommand(parameters);
     }
+    public abstract String executeCommand(List<String> parameters);
+
 }

@@ -31,7 +31,7 @@ class CreateTaskCommandTest {
         parameters = new ArrayList<>();
         title = "Task title test1";
         description = "Task description test1";
-        dueDate = ParsingHelpers.tryParseLocalDate("2023-08-01", "dueDate");
+        dueDate = LocalDate.parse("2023-08-01");
     }
 
     @Test

@@ -7,7 +7,6 @@ import models.UserImpl;
 import models.contracts.Identifiable;
 import models.contracts.Task;
 import models.contracts.User;
-import models.enums.Status;
 import utils.ConstantHelpers;
 
 import java.time.LocalDate;

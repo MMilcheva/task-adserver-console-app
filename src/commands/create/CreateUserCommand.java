@@ -22,16 +22,10 @@ public class CreateUserCommand extends BaseCommand {
     public String executeCommand(List<String> parameters) {
         ValidationHelpers.validateArgumentsCount(parameters, EXPECTED_NUMBER_OF_ARGUMENTS);
 
-        parseParameters(parameters);
-
+        this.name = parameters.get(0);
         getTaskManagementSystemRepository().createUser(this.name);
 
         return String.format(USER_CREATED_MESSAGE, this.name);
 
     }
-
-   public void parseParameters(List<String> parameters) {
-        this.name = parameters.get(0);
-    }
-
 }

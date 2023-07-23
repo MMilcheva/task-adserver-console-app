@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class ListAllTasksCommandTest {
-    private TaskManagementSystemRepository testRepository;
+    private TaskManagementSystemRepository repository;
     private BaseCommand command;
     private List<Task> allTasks;
     private List<String> parameters;
@@ -25,24 +25,22 @@ class ListAllTasksCommandTest {
 
     @BeforeEach
     public void setupTest() {
-        testRepository = new TaskManagementSystemRepositoryImpl();
-        command = new ListAllTasksCommand(testRepository);
+        repository = new TaskManagementSystemRepositoryImpl();
+        command = new ListAllTasksCommand(repository);
         allTasks = new ArrayList<>();
         parameters = new ArrayList<>();
-        testRepository.createTask("Task 1fhhfgh", "Description 1", LocalDate.parse("2023-07-22"));
-        testRepository.createTask("Task 2fhgfjfkk", "Description 2", LocalDate.parse("2023-07-20"));
-
+        repository.createTask("Task 1fhhfgh", "Description 1", LocalDate.parse("2023-07-22"));
+        repository.createTask("Task 2fhgfjfkk", "Description 2", LocalDate.parse("2023-07-20"));
     }
 
     @Test
     void executeCommand_Should_Return_AllTasks_Sorted_When_ListNotEmpty() {
         assertNotNull(allTasks);
-        assertEquals(2, testRepository.getAllTasks().size());
+        assertEquals(2, repository.getAllTasks().size());
         String expectedOutput = "1.Task {id=2, title='Task 2fhgfjfkk', description='Description 2', status=New, dueDate=2023-07-20}" +
                 System.lineSeparator()+
                 "2.Task {id=1, title='Task 1fhhfgh', description='Description 1', status=New, dueDate=2023-07-22}";
         String actualTasks = command.executeCommand(parameters);
-        System.out.println(actualTasks);
         assertEquals(expectedOutput, actualTasks);
     }
 }

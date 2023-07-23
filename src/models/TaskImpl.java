@@ -122,16 +122,5 @@ public class TaskImpl implements Task, Identifiable, Printable {
     public int hashCode() {
         return Objects.hash(id, title, description, dueDate);
     }
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        TaskImpl task = (TaskImpl) o;
-//        return dueDate.equals(task.dueDate);
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(dueDate);
-//    }
+
 }

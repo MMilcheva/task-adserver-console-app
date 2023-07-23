@@ -45,7 +45,6 @@ class CreateTaskCommandTest {
 
         String actualMessage = command.executeCommand(parameters);
 
-
         Assertions.assertEquals(expectedMessage, actualMessage);
 
     }

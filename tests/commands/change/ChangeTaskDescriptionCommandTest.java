@@ -1,7 +1,6 @@
 package commands.change;
 
 import commands.BaseCommand;
-import commands.create.CreateTaskCommand;
 import core.TaskManagementSystemRepositoryImpl;
 import core.contracts.TaskManagementSystemRepository;
 import org.junit.jupiter.api.Assertions;
@@ -10,11 +9,8 @@ import org.junit.jupiter.api.Test;
 import utils.ConstantHelpers;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-
-import static utils.ConstantHelpers.TASK_CREATED_MESSAGE;
 
 class ChangeTaskDescriptionCommandTest {
 
@@ -43,6 +39,13 @@ class ChangeTaskDescriptionCommandTest {
 
         String actualMessage = command.executeCommand(parameters);
         Assertions.assertEquals(expectedMessage, actualMessage);
+    }
+
+    @Test
+    void executeCommand_Should_ThrowException_When_ParametersNotParsed() {
+        parameters.add(description);
+        parameters.add(description);
+        Assertions.assertThrows(IllegalArgumentException.class, () -> command.executeCommand(parameters));
     }
 
     @Test
